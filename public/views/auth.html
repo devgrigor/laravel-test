@@ -1,0 +1,53 @@
+<div class="row">
+	<h2 class="col-md-12">Log in</h2>
+	<form ng-submit="logIn()" >
+		<div class="col-md-6">
+			<label class="full-width">Email</lable>
+			<input ng-model="login.email" class="form-control" type="email" required />
+		</div>
+
+		<div class="col-md-6">
+			<label class="full-width">Password</lable>
+			<input ng-model="login.password" class="form-control" type="password" idrequired />
+		</div>
+		<div class="col-md-12">
+			<p class="alert alert-danger" ng-show="hasLogError">{{beError}}</p>
+		</div>
+		<div class="col-md-6">
+			<label class="full-width">&nbsp;</lable>
+			<button class="btn btn-success form-control" type="submit">Submit</button>
+		</div>
+	</form>
+</div>
+<div class="row">
+	<h2 class="col-md-12">Sign Up</h2>
+	<form ng-submit="signUp()" id="movie-form">
+		<div class="col-md-6">
+			<label class="full-width">Email</lable>
+			<input ng-model="user.email" class="form-control" type="text" required />
+		</div>
+
+		<div class="col-md-6">
+			<label class="full-width">Password</lable>
+			<input ng-model="user.password" class="form-control" type="password" idrequired />
+		</div>
+
+		<div class="col-md-6">
+			<label class="full-width">Repeat Password</lable>
+			<input ng-model="password_2" class="form-control" type="password" id="image" required />
+		</div>
+
+		<div class="col-md-6">
+			<label class="full-width">Role</lable>
+			<select ng-model="user.role" class="form-control" required>
+				<option value="">Select</option>
+				<option ng-repeat="role in roles" value="{{role.id}}">{{role.title}}</option>
+			 </select>
+		</div>
+
+		
+		<div class="col-md-12">
+			<p class="alert alert-danger" ng-show="hasError">{{beError}}</p>
+			<button class="btn btn-success" type="submit">Submit</button>
+	</form>
+</div>
